@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
@@ -21,7 +20,7 @@ const itemVariants: Variants = {
   visible: { 
     y: 0, 
     opacity: 1,
-    transition: { type: "spring", stiffness: 120 }
+    transition: { type:"spring", stiffness: 120 }
   },
 };
 
