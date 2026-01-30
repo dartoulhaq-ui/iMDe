@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const containerVariants: Variants = {
+const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -14,13 +14,12 @@ const containerVariants: Variants = {
     },
   },
 };
-
-const itemVariants: Variants = {
+const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: { 
     y: 0, 
     opacity: 1,
-    transition: { type:"spring", stiffness: 120 }
+    transition: { type: "spring", stiffness: 120 }
   },
 };
 
@@ -57,7 +56,6 @@ export default function PortofolioPage() {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6"
         >
-          
           <motion.div 
             variants={itemVariants}
             className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-[2rem] bg-neutral-900 border border-neutral-800"
@@ -105,15 +103,15 @@ export default function PortofolioPage() {
                 <h3 className="text-2xl font-bold mb-2 text-white">Proposal Proyek</h3>
                 <p className="text-blue-200 text-sm mb-6">Unduh detail selengkapnya mengenai visi, timeline, dan estimasi biaya.</p>              
                 <a 
-  href="/proposal.pdf" 
-  download="Proposal_Proyek_NamaAnda.pdf" 
-  className="flex items-center gap-2 px-5 py-3 bg-white text-black rounded-full font-semibold text-sm hover:bg-gray-200 transition-colors w-fit"
->
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-  </svg>
-  Unduh PDF
-</a>
+                  href="/proposal.pdf" 
+                  download="Proposal_Proyek_NamaAnda.pdf" 
+                  className="flex items-center gap-2 px-5 py-3 bg-white text-black rounded-full font-semibold text-sm hover:bg-gray-200 transition-colors w-fit"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                  </svg>
+                  Unduh PDF
+                </a>
             </div>
           </motion.div>
         </motion.div>
