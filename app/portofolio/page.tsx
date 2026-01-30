@@ -1,9 +1,11 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+// Kita biarkan definisinya sederhana
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -14,6 +16,7 @@ const containerVariants = {
     },
   },
 };
+
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: { 
@@ -49,15 +52,14 @@ export default function PortofolioPage() {
             Kumpulan proyek terpilih yang menggabungkan estetika dan fungsionalitas.
           </p>
         </motion.div>
-
         <motion.div 
-          variants={containerVariants}
+          variants={containerVariants as any}
           initial="hidden"
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6"
         >
           <motion.div 
-            variants={itemVariants}
+            variants={itemVariants as any}
             className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-[2rem] bg-neutral-900 border border-neutral-800"
           >
             <div className="absolute inset-0 z-0">
@@ -86,15 +88,14 @@ export default function PortofolioPage() {
             </div>
           </motion.div>
           <motion.div 
-            variants={itemVariants}
+            variants={itemVariants as any}
             className="p-8 rounded-[2rem] bg-neutral-900 border border-neutral-800 flex flex-col justify-center items-center text-center hover:bg-neutral-800 transition-colors"
           >
             <h3 className="text-5xl font-bold text-blue-500 mb-2">1+</h3>
             <p className="text-gray-400 font-medium">Tahun Pengalaman</p>
           </motion.div>
-
           <motion.div 
-            variants={itemVariants}
+            variants={itemVariants as any}
             className="relative p-8 rounded-[2rem] bg-gradient-to-br from-blue-900 to-black border border-blue-800 overflow-hidden group cursor-pointer"
           >
             <div className="absolute inset-0 bg-blue-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -129,28 +130,24 @@ export default function PortofolioPage() {
                         <p className="text-gray-400 text-sm">ON PROGRES</p>
                     </div>
                 </motion.div>
-
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                     className="group relative h-80 rounded-3xl overflow-hidden bg-gray-900 border border-gray-800 cursor-pointer"
                 >
-                    <div className="absolute inset-0 bg-gray-800" /> {/* Placeholder background */}
+                    <div className="absolute inset-0 bg-gray-800" /> 
                     <div className="absolute bottom-0 p-8">
                         <h4 className="text-xl font-bold">Sertifikat</h4>
                         <p className="text-gray-400 text-sm">SAMSUNG,DNCC,DOSCOM</p>
                     </div>
                 </motion.div>
-
             </div>
         </div>
 
       </main>
-
-      {/* --- FOOTER SIMPLE --- */}
       <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-900">
-        <p>&copy; 2024 Designed by You.</p>
+        <p>&copy; 2026 By iMDe.</p>
       </footer>
 
     </div>
