@@ -24,8 +24,8 @@ export default function HomePage() {
     ["#8b5cf6", "#3b82f6", "#ffffff"]
   );
   const [comments, setComments] = useState([
-    { id: 1, user: "Anonim_01", text: "Website ini keren banget bang! 🔥", time: "Baru saja" },
-    { id: 2, user: "SiSukaCoding", text: "Tutorial Next.js nya dong...", time: "5 menit lalu" },
+    { id: 1, user: "Fufufafa", text: "Mana AI nya", time: "Baru saja" },
+    { id: 2, user: "Inisial S", text: "Hmm...", time: "5 menit lalu" },
   ]);
   const [inputName, setInputName] = useState("");
   const [inputMsg, setInputMsg] = useState("");
@@ -275,7 +275,7 @@ export default function HomePage() {
               whileHover={{ y: -10 }}
               className="bg-gray-900 p-8 rounded-2xl border border-gray-800 text-center"
             >
-              <h4 className="text-2xl font-bold mb-2">Tips & Trik</h4>
+              <h4 className="text-2xl font-bold mb-2">99+ Tips & Trik</h4>
               <p className="text-gray-400 mb-4 text-sm">Hacks kehidupan dan teknologi terbaru, biar ga gaptek</p>
               <button className="text-blue-400 hover:text-blue-300 font-semibold"><a href="/tips">Buka Halaman →</a></button>
             </motion.div>
