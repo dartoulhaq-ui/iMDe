@@ -218,7 +218,7 @@ export default function HomePage() {
                       maxLength={15}
                       value={inputName}
                       onChange={(e) => setInputName(e.target.value)}
-                      placeholder="ex: Fans Berat"
+                      placeholder="ex: Wowo"
                       className="w-full bg-black/50 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500 transition"
                       required
                     />

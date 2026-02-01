@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-// Kita biarkan definisinya sederhana
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
