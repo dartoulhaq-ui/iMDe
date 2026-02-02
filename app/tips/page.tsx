@@ -9,10 +9,11 @@ const tipsData = [
     id: 1,
     category: "Photography",
     title: "Lighting Rahasia",
-    desc: "Cara bikin fotomu biar makin kelihatan berkelas.",
+    desc: "Cara edit fotomu biar makin kelihatan berkelas.",
     color: "bg-blue-500", 
     size: "col-span-1 row-span-1",
-    icon: "📸"
+    icon: "📸",
+    url:"https://youtube.com/@infofotografi?si=fBDf1aI2ysk6FQs_"
   },
   {
     id: 2,
@@ -21,16 +22,18 @@ const tipsData = [
     desc: "Semua solusi terbaik&aman buat naikin kenyamanan laptopmu.",
     color: "bg-purple-500", 
     size: "col-span-1 md:col-span-2 row-span-1", 
-    icon: "💻"
+    icon: "💻",
+    url : "https://youtube.com/@doctopjkt?si=ofXBAFjLa9PCFmjy"
   },
   {
     id: 3,
     category: "Life Hacks",
-    title: "Biar Fokus 100%",
-    desc: "Seputar Life hacks,Teknik Pomodoro + Musik LoFi = Produktivitas Maksimal.",
+    title: "Penuh simpel tips dan Inovatif",
+    desc: "Seputar Life hacks,biar produktivitasmu makin Maksimal.",
     color: "bg-green-500", 
     size: "col-span-1 row-span-1",
-    icon: "🍅"
+    icon: "🍅",
+    url: "https://youtube.com/@5minutecraftsyoutube?si=ILqsLu7hmypKDcU6"
   },
   {
     id: 4,
@@ -39,25 +42,28 @@ const tipsData = [
     desc: "Buat Codingmu jadi 2x lebih cepat.",
     color: "bg-indigo-500",
     size: "col-span-1 row-span-2", 
-    icon: "⚛️"
+    icon: "⚛️",
+    url: "https://youtube.com/@fireship?si=_9t6kXRj2I0AT5eK"
   },
   {
     id: 5,
-    category: "Info template FREE",
+    category: "Tutor JAGO Ngedit",
     title: "Editing CapCut",
     desc: "Transisi mulus tanpa plugin mahal.",
     color: "bg-pink-500",
     size: "col-span-1 row-span-1",
-    icon: "🎬"
+    icon: "🎬",
+    url: "https://youtu.be/vTKKF6LPhaA?si=wfG9f34M9esmyXDS"
   },
   {
     id: 6,
     category: "Health Tips",
     title: "Lagi sakit? Coba cara ini!",
-    desc: "Rumus 10-3-2-1 biar badan seharian terasa segar.",
+    desc: "Biar badan sehat dan gak stress lagi(Tapi tetap disarankan ke Dokter/Puskesmas terdekat jika gejalanya cukup parah).",
     color: "bg-orange-500",
     size: "col-span-1 row-span-1",
-    icon: "💤"
+    icon: "💤",
+    url:"www.healthline.com"
   },
 ];
 
@@ -89,27 +95,25 @@ export default function TipsPage() {
              <span className="text-2xl mr-1">‹</span> Home
           </Link>
           <span className="font-semibold text-lg">Tips & Library</span>
-          <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-xs">User</div>
+          <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-xs">0o0</div>
         </div>
       </nav>
 
       <main className="pt-32 pb-20 px-4 md:px-6 max-w-5xl mx-auto">
         
-        {/* HEADER & SEARCH BAR */}
         <div className="text-center mb-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
                 Pintar dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">5 Menit.</span>
             </h1>
             
-            {/* iOS Search Bar (SEKARANG BERFUNGSI) */}
             <div className="relative max-w-md mx-auto group">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
                 <input 
                     type="text" 
-                    value={searchTerm} // Hubungkan nilai dengan State
-                    onChange={(e) => setSearchTerm(e.target.value)} // Update state saat mengetik
+                    value={searchTerm} 
+                    onChange={(e) => setSearchTerm(e.target.value)} 
                     placeholder="Cari tips (ex: Coding, Foto)..." 
                     className="block w-full pl-10 pr-3 py-3 rounded-xl bg-gray-900 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-gray-800 transition-all"
                 />
@@ -142,7 +146,7 @@ export default function TipsPage() {
                         layout
                         initial={{ opacity: 0, scale: 0.9 }} 
                         animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }} // Animasi saat hilang difilter
+                        exit={{ opacity: 0, scale: 0.9 }}
                         key={tip.id}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
