@@ -59,11 +59,11 @@ const tipsData = [
     id: 6,
     category: "Health Tips",
     title: "Lagi sakit? Coba cara ini!",
-    desc: "Biar badan sehat dan gak stress lagi(Tapi tetap disarankan ke Dokter/Puskesmas terdekat jika gejalanya cukup parah).",
+    desc: "Biar badan sehat dan gak stress lagi.",
     color: "bg-orange-500",
     size: "col-span-1 row-span-1",
     icon: "💤",
-    url:"www.healthline.com"
+    url:"https://www.healthline.com"
   },
 ];
 
@@ -76,7 +76,6 @@ const promoLinks = [
 export default function TipsPage() {
   const [activeCat, setActiveCat] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
-
   const filteredTips = tipsData.filter((item) => {
     const matchCategory = activeCat === "All" || item.category === activeCat;
     const matchSearch = 
@@ -103,7 +102,7 @@ export default function TipsPage() {
         
         <div className="text-center mb-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-                Pintar dalam <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">5 Menit.</span>
+                Be Modern in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">5 Menit.</span>
             </h1>
             
             <div className="relative max-w-md mx-auto group">
@@ -151,6 +150,7 @@ export default function TipsPage() {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         transition={{ duration: 0.3 }}
+                        onClick={() => window.open(tip.url, "_blank")}
                         className={`${tip.size} relative rounded-[2rem] p-6 flex flex-col justify-between overflow-hidden cursor-pointer group bg-neutral-900 border border-white/5`}
                     >
                         <div className={`absolute inset-0 ${tip.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
@@ -184,7 +184,7 @@ export default function TipsPage() {
             </AnimatePresence>
         </motion.div>
         <div className="mt-24 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-6 pl-4 border-l-4 border-blue-500">Pojok Rekomendasi</h3>
+            <h3 className="text-2xl font-bold mb-6 pl-4 border-l-4 border-blue-500">Rekomendasi</h3>
             <div className="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800">
                 {promoLinks.map((link, idx) => (
                     <a 
@@ -209,7 +209,7 @@ export default function TipsPage() {
                     </a>
                 ))}
             </div>
-            <p className="text-center text-xs text-gray-500 mt-4">Link di atas adalah afiliasi resmi & produk original.</p>
+            <p className="text-center text-xs text-gray-500 mt-4">Link di atas berupa afiliasi resmi & produk original.</p>
         </div>
 
       </main>
