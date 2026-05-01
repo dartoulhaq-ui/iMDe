@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMDe Forum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="tech.css">
+</head>
+<body class="bg-apple-bg text-apple-text font-sans antialiased selection:bg-apple-blue selection:text-white">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-gray-200/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <i class='bx bxl-apple text-2xl mr-2'></i>
+                    <span class="font-semibold text-lg tracking-tight">AppLibrary</span>
+                </div>
+
+                <div class="hidden md:flex flex-1 justify-center px-8">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class='bx bx-search text-apple-muted text-lg'></i>
+                        </div>
+                        <input type="text" id="searchInputDesktop" class="block w-full pl-10 pr-3 py-2 border-none rounded-full bg-gray-100/80 focus:bg-white focus:ring-2 focus:ring-apple-blue/50 text-sm placeholder-apple-muted transition-all duration-300 shadow-sm" placeholder="Cari aplikasi (misal: iMDe)...">
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button id="categoryMenuBtn" class="w-10 h-10 rounded-full bg-apple-blue border border-gray-200 flex items-center justify-center text-white hover:bg-apple-blueHover transition-all">
+                        <i class='bx bx-grid-alt text-xl'></i>
+                    </button>
+                    <div id="categoryDropdown" class="absolute top-16 right-4 bg-white rounded-2xl shadow-lg border border-gray-200 p-4 hidden opacity-0 transform translate-y-2 transition-all duration-300 z-50">
+                        <h3 class="text-sm font-semibold text-apple-text mb-3">Kategori Aplikasi</h3>
+                        <div class="space-y-2">
+                            <button class="category-btn w-full text-left px-3 py-2 text-sm text-apple-muted hover:bg-gray-50 rounded-lg transition-colors" data-category="Editor App">Editor App</button>
+                            <button class="category-btn w-full text-left px-3 py-2 text-sm text-apple-muted hover:bg-gray-50 rounded-lg transition-colors" data-category="Game">Game</button>
+                            <button class="category-btn w-full text-left px-3 py-2 text-sm text-apple-muted hover:bg-gray-50 rounded-lg transition-colors" data-category="Tools">Tools</button>
+                            <button class="category-btn w-full text-left px-3 py-2 text-sm text-apple-muted hover:bg-gray-50 rounded-lg transition-colors" data-category="Most Popular">Most Popular</button>
+                        </div>
+                    </div>
+                    <a href="https://t.me/komunitasanda" target="_blank" class="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full text-sm font-medium text-white bg-black hover:bg-gray-800 transition-all duration-300 shadow-sm">
+                        <i class='bx bxl-telegram mr-2'></i> Join Channel
+                    </a>
+                </div>
+            </div>
+            <div class="md:hidden pb-3">
+                <div class="relative w-full mb-3">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class='bx bx-search text-apple-muted text-lg'></i>
+                    </div>
+                    <input type="text" id="searchInputMobile" class="block w-full pl-10 pr-3 py-2 border-none rounded-full bg-gray-100/80 focus:bg-white focus:ring-2 focus:ring-apple-blue/50 text-sm placeholder-apple-muted transition-all shadow-sm" placeholder="Cari aplikasi...">
+                </div>
+                <a href="https://t.me/komunitasanda" target="_blank" class="inline-flex items-center justify-center w-full px-4 py-2 border border-transparent rounded-full text-sm font-medium text-white bg-black hover:bg-gray-800 transition-all duration-300 shadow-sm">
+                    <i class='bx bxl-telegram mr-2'></i> Join Channel
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 md:pt-32 pb-16">
+        
+        <section class="text-center px-4 mb-16 max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-apple-text">
+                Tingkatkan Produktivitasmu<br class="hidden md:block"> dengan Tools Terbaik kami.
+            </h1>
+            <p class="text-lg text-apple-muted mb-8 font-light">
+                Kurasi aplikasi dan tools premium untuk mempercepat alur kerja Anda. Temukan, coba, dan jadilah lebih efisien setiap hari.
+            </p>
+            <button onclick="scrollToCatalog()" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-apple-blue hover:bg-apple-blueHover shadow-[0_4px_14px_0_rgba(0,113,227,0.39)] transition-all duration-300 transform hover:scale-105">
+                Jelajahi Katalog <i class='bx bx-chevron-down ml-2 text-xl'></i>
+            </button>
+        </section>
+
+        <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-6">
+                <div>
+                    <h2 class="text-2xl font-semibold tracking-tight">Rekomendasi Terbaru</h2>
+                    <p class="text-sm text-apple-muted mt-1">Geser untuk melihat lebih banyak</p>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="slideLeft()" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 hover:shadow-sm transition-all">
+                        <i class='bx bx-chevron-left text-2xl'></i>
+                    </button>
+                    <button onclick="slideRight()" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 hover:shadow-sm transition-all">
+                        <i class='bx bx-chevron-right text-2xl'></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="app-slider" class="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-8 pt-2">
+                </div>
+            
+            <div id="no-result" class="hidden text-center py-10 text-apple-muted">
+                <i class='bx bx-folder-open text-4xl mb-2'></i>
+                <p>Aplikasi tidak ditemukan.</p>
+            </div>
+        </section>
+
+        <section id="filtered-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 hidden">
+            <div class="flex justify-between items-end mb-6">
+                <div>
+                    <h2 id="filtered-title" class="text-2xl font-semibold tracking-tight">Hasil Filter</h2>
+                    <p class="text-sm text-apple-muted mt-1">Aplikasi berdasarkan kategori yang dipilih</p>
+                </div>
+                <button onclick="clearFilter()" class="px-4 py-2 text-sm text-apple-blue hover:bg-blue-50 rounded-full transition-colors">
+                    <i class='bx bx-x mr-1'></i> Hapus Filter
+                </button>
+            </div>
+
+            <div id="filtered-slider" class="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-8 pt-2">
+            </div>
+        </section>
+
+    </main>
+
+    <section class="border-t border-gray-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 py-8 text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-50 text-orange-500 mb-3">
+                <i class='bx bx-shield-quarter text-2xl'></i>
+            </div>
+            <p class="text-xs text-apple-muted max-w-2xl mx-auto">
+                <strong>Disclaimer:</strong> Semua tools dan aplikasi di-review murni untuk tujuan edukasi dan mempermudah produktivitas bagi yang mengalami kendala keterbatasan pada Software nya. 
+                Kami tidak menghosting, menyimpan, atau mendistribusikan file aplikasi (APK/DMG/EXE) di server kami. 
+                Tautan bebas iklan(kecuali basic),No !!VIRUS!!, Tidak ada yang perlu dikhawatirkan
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-apple-bg py-6 text-center border-t border-gray-200/60">
+        <p class="text-sm text-apple-muted">
+            &copy; <span id="year"></span> iMDe Forum. Hak cipta dilindungi. <br class="sm:hidden">
+            <a href="#" class="text-apple-blue hover:underline mt-2 sm:mt-0 sm:ml-2">Kebijakan Privasi</a>
+        </p>
+    </footer>
+
+    <script src="tech.js"></script>
+</body>
+</html>
